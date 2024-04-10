@@ -1,0 +1,23 @@
+[
+    {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "password123"
+    },
+    {
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "password": "securepassword"
+    },
+    {
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "password": "qwerty123"
+    },
+    {
+      "name": "Alagu Aravind A",
+      "email": "717821p105@kce.ac.in",
+      "password" : "12345"
+    }
+  ]
+  

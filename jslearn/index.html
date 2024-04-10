@@ -53,11 +53,11 @@
                 <form>
                     <div class="mb-3">
                         <label for="cat" class="form-label">Category</label>
-                        <input type="text" id="cat" class="form-control bg-dark text-white" aria-describedby="catHelp">
+                        <input type="text" id="cat" class="form-control bg-dark text-white" aria-describedby="catHelp" required>
                     </div>
                     <div class="mb-3">
                         <label for="sub" class="form-label">Sub-Category</label>
-                        <input type="text" id="sub" class="form-control bg-dark text-white">
+                        <input type="text" id="sub" class="form-control bg-dark text-white" required>
                     </div>
                     <div class="mb-3">
                         <label for="time" class="form-label">Duration</label>
@@ -65,10 +65,10 @@
                     </div>
                     <div class="mb-3">
                         <label for="task" class="form-label">Task</label>
-                        <input type="text" id="task" class="form-control bg-dark text-white">
+                        <input type="text" id="task" class="form-control bg-dark text-white" required>
                     </div>
                     <div style="display: flex; justify-content: space-between;">
-                        <button id="push" class="btn btn-primary" style="max-height: 50px;">ADD</button>
+                        <button id="push" type="submit" class="btn btn-primary" style="max-height: 50px;">ADD</button>
                         <button id="update1" class="btn btn-primary" style="max-height: 50px;">Update</button>
                         <div>
                             <p>Duration controls</p>
