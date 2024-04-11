@@ -216,16 +216,14 @@ document.querySelector("#dropvalue").addEventListener("change", function () {
         cell.textContent = item[key];
         row.appendChild(cell);
       }
-      const upcell = document.createElement("td");
       const button = document.createElement("button");
       button.textContent = "Edit";
       
       // cell.textContent=button;
       button.id = "update";
       button.addEventListener("click", () => updatevalue(item));
-      upcell.appendChild(button)
 
-      row.appendChild(upcell);
+      row.appendChild(button);
       const delbutton = document.createElement("button");
       // delbutton.textContent = "delete";
       delbutton.textContent = "Delete";
@@ -322,9 +320,9 @@ up.addEventListener("click", (e) => {
       
       button.id = "update";
       button.addEventListener("click", () => updatevalue(item));
-      cell.appendChild(button)
+      // cell.textContent=button
 
-      row.appendChild(cell);
+      row.appendChild(button);
       const delbutton = document.createElement("button");
       delbutton.textContent = "Delete";
       delbutton.classList.add("delete-button");
