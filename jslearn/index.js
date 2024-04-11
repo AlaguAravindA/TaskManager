@@ -132,6 +132,10 @@ function updatevalue(item) {
   duar.innerText = item.duration;
   task.value = item.task;
   document.querySelector("#push").style = "display:none";
+  document.querySelector("#update1").style = "display:block";
+  document.querySelector("#update1").style.maxHeight = "50px";
+
+
 }
 
 //delete
@@ -148,22 +152,13 @@ function deletevalue(item) {
     }
     const cell = document.createElement("td");
     const button = document.createElement("button");
-    button.textContent = "update";
-    button.style.backgroundColor = "green";
-    button.style.color = "white";
-    button.style.borderRadius = "5px";
-    button.style.padding = "5px";
-    button.style.marginLeft = "20px";
-    cell.textContent = button;
+    button.textContent = "Edit";
+    
     button.id = "update";
     button.addEventListener("click", () => updatevalue(item));
     const delbutton = document.createElement("button");
-    delbutton.textContent = "delete";
-    delbutton.style.backgroundColor = "red";
-    delbutton.style.color = "white";
-    delbutton.style.borderRadius = "5px";
-    delbutton.style.padding = "5px";
-    delbutton.style.marginLeft = "20px";
+    delbutton.textContent = "Delete";
+    delbutton.classList.add("delete-button");
     delbutton.addEventListener("click", () => {
       deletevalue(item);
     });
@@ -185,22 +180,13 @@ data.forEach((item) => {
   }
   const cell = document.createElement("td");
   const button = document.createElement("button");
-  button.textContent = "update";
-  button.style.backgroundColor = "green";
-  button.style.color = "white";
-  button.style.borderRadius = "5px";
-  button.style.padding = "5px";
-  button.style.marginLeft = "20px";
-  cell.textContent = button;
+  button.textContent = " Edit ";
+  
   button.id = "update";
   button.addEventListener("click", () => updatevalue(item));
   const delbutton = document.createElement("button");
-  delbutton.textContent = "delete";
-  delbutton.style.backgroundColor = "red";
-  delbutton.style.color = "white";
-  delbutton.style.borderRadius = "5px";
-  delbutton.style.padding = "5px";
-  delbutton.style.marginLeft = "20px";
+  delbutton.textContent = "Delete";
+  delbutton.classList.add("delete-button");
   delbutton.addEventListener("click", () => {
     deletevalue(item);
   });
@@ -230,24 +216,20 @@ document.querySelector("#dropvalue").addEventListener("change", function () {
         cell.textContent = item[key];
         row.appendChild(cell);
       }
+      const upcell = document.createElement("td");
       const button = document.createElement("button");
-      button.textContent = "update";
-      button.style.backgroundColor = "green";
-      button.style.color = "white";
-      button.style.borderRadius = "5px";
-      button.style.padding = "5px";
+      button.textContent = "Edit";
+      
       // cell.textContent=button;
       button.id = "update";
       button.addEventListener("click", () => updatevalue(item));
+      upcell.appendChild(button)
 
-      row.appendChild(button);
+      row.appendChild(upcell);
       const delbutton = document.createElement("button");
-      delbutton.textContent = "delete";
-      delbutton.style.backgroundColor = "red";
-      delbutton.style.color = "white";
-      delbutton.style.borderRadius = "5px";
-      delbutton.style.padding = "5px";
-      delbutton.style.marginLeft = "20px";
+      // delbutton.textContent = "delete";
+      delbutton.textContent = "Delete";
+      delbutton.classList.add("delete-button");
       delbutton.addEventListener("click", () => {
         deletevalue(item);
       });
@@ -264,6 +246,12 @@ document.querySelector("#push").addEventListener("click", function (e) {
   const sub = document.querySelector("#sub").value;
   const duar = document.querySelector("#time");
   const task = document.querySelector("#task").value;
+  
+  // Check if any of the fields are empty
+  if (cat.trim() === "" || sub.trim() === "" || task.trim() === "") {
+    alert("Please fill in all fields before adding.");
+    return;
+  }
 
   data.push({
     category: cat,
@@ -283,22 +271,15 @@ document.querySelector("#push").addEventListener("click", function (e) {
       row.appendChild(cell);
     }
     const button = document.createElement("button");
-    button.textContent = "update";
-    button.style.backgroundColor = "green";
-    button.style.color = "white";
-    button.style.borderRadius = "5px";
-    button.style.padding = "5px";
+    button.textContent = "Edit";
+    
     button.id = "update";
     button.addEventListener("click", () => updatevalue(item));
 
     row.appendChild(button);
     const delbutton = document.createElement("button");
-    delbutton.textContent = "delete";
-    delbutton.style.backgroundColor = "red";
-    delbutton.style.color = "white";
-    delbutton.style.borderRadius = "5px";
-    delbutton.style.padding = "5px";
-    delbutton.style.marginLeft = "20px";
+    delbutton.textContent = "Delete";
+    delbutton.classList.add("delete-button");
     delbutton.addEventListener("click", () => {
       deletevalue(item);
     });
@@ -307,6 +288,7 @@ document.querySelector("#push").addEventListener("click", function (e) {
     updateDropdown();
   });
 });
+
 const up = document.querySelector("#update1");
 // update the table
 up.addEventListener("click", (e) => {
@@ -336,23 +318,16 @@ up.addEventListener("click", (e) => {
       }
       const cell = document.createElement("td");
       const button = document.createElement("button");
-      button.textContent = "update";
-      button.style.backgroundColor = "green";
-      button.style.color = "white";
-      button.style.borderRadius = "5px";
-      button.style.padding = "5px";
-      cell.textContent = button;
+      button.textContent = "Edit";
+      
       button.id = "update";
       button.addEventListener("click", () => updatevalue(item));
+      cell.appendChild(button)
 
-      row.appendChild(button);
+      row.appendChild(cell);
       const delbutton = document.createElement("button");
-      delbutton.textContent = "delete";
-      delbutton.style.backgroundColor = "red";
-      delbutton.style.color = "white";
-      delbutton.style.borderRadius = "5px";
-      delbutton.style.padding = "5px";
-      delbutton.style.marginLeft = "20px";
+      delbutton.textContent = "Delete";
+      delbutton.classList.add("delete-button");
       delbutton.addEventListener("click", () => {
         deletevalue(item);
       });
@@ -369,6 +344,8 @@ up.addEventListener("click", (e) => {
   task.value = "";
   document.querySelector("#push").style.display = "block";
   document.querySelector("#push").style.maxHeight = "50px";
+  document.querySelector("#update1").style.display = "none";
+  document.querySelector("#update1").style.maxHeight = "50px";
 });
 
 var seconds = 0;

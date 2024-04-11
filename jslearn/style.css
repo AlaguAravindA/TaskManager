@@ -1,4 +1,103 @@
-.night{
-    background-color: black;
+  
+ 
+
+/* Style for the edit button */
+button#update {
+    background-color: #4CAF50; 
+    border: none;
     color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 20px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  /* On hover, change the background color of the edit button */
+  button#update:hover {
+    background-color: #45a049;
+  }
+  
+  button.delete-button {
+    background-color: #794e4c; /* Red */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 20px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  /* On hover, change the background color of the delete button */
+  button.delete-button:hover {
+    background-color: #d32f2f; /* Darker red */
+  }
+
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #b4b1b1;
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(177, 175, 175, 0.1);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.btn-update{
+    display: none;
+}
+
+/* Styling for duration controls */
+.duration-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+}
+
+#time {
+    font-size: larger;
+    color: #fff; /* Text color */
+    background-color: #333; /* Background color */
+    padding: 10px 20px; /* Padding */
+    border-radius: 5px; /* Border radius */
+    display: inline-block; /* Display as inline-block to control width */
+    border: 2px solid #fff; /* White border around time display */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+}
+
+#start,
+#reset {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Padding */
+    margin-top: 10px; /* Margin from the top */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 5px; /* Border radius */
+    font-family: Arial, sans-serif; /* Button font */
+}
+
+#start:hover,
+#reset:hover {
+    background-color: #0056b3; /* Button background color on hover */
+}
+
+
+    /* Align duration controls to the side */
+    .duration-controls {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+#update1{
+    display: none;
 }

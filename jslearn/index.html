@@ -9,19 +9,15 @@
 </head>
 <style>
     /* Additional CSS styles can be added here */
-    body {
-        background-color: #1e1e1e;
-        color: #ddd;
-    }
-    h1 {
-        text-align: center;
-        font-size: 3em;
-        color: #b4b1b1;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(177, 175, 175, 0.1);
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
+   /* Additional CSS styles can be added here */
+   body {
+    background-color: #1e1e1e;
+    /* background-image: url("bg.jpg"); */
+    backdrop-filter: blur(10px);
+
+    color: #ddd;
+}
+
 </style>
 
 <body>
@@ -35,7 +31,7 @@
                <div style="margin-left: 20px;">
                    <select id="dropvalue" class="form-control" style="background-color: #333; color: #ddd; border-color: #555; max-width: 200px; margin-top: 20px;"></select>
                </div>
-               <table id="datadisplay" class="table table-dark" style="margin-top: 20px;">
+               <table id="datadisplay" class="table tab-hover table-dark" style="margin-top: 20px;">
                    <thead>
                        <tr>
                            <th>Category</th>
@@ -53,28 +49,29 @@
                 <form>
                     <div class="mb-3">
                         <label for="cat" class="form-label">Category</label>
-                        <input type="text" id="cat" class="form-control bg-dark text-white" aria-describedby="catHelp" required>
+                        <input type="text" id="cat" class="form-control bg-dark text-white" aria-describedby="catHelp" >
                     </div>
                     <div class="mb-3">
                         <label for="sub" class="form-label">Sub-Category</label>
-                        <input type="text" id="sub" class="form-control bg-dark text-white" required>
+                        <input type="text" id="sub" class="form-control bg-dark text-white" >
                     </div>
-                    <div class="mb-3">
-                        <label for="time" class="form-label">Duration</label>
-                        <h2 id="time" style="font-size: larger;">00:00:00</h2>
-                    </div>
-                    <div class="mb-3">
-                        <label for="task" class="form-label">Task</label>
-                        <input type="text" id="task" class="form-control bg-dark text-white" required>
-                    </div>
-                    <div style="display: flex; justify-content: space-between;">
-                        <button id="push" type="submit" class="btn btn-primary" style="max-height: 50px;">ADD</button>
-                        <button id="update1" class="btn btn-primary" style="max-height: 50px;">Update</button>
-                        <div>
+                    <div class="mb-3 duration-controls">
+              
+                        <h2 id="time">00:00:00</h2>
+                        <span>
                             <p>Duration controls</p>
                             <p id="start" class="btn btn-primary">Start</p>
                             <p id="reset" class="btn btn-primary">Reset</p>
-                        </div>
+                        </span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="task" class="form-label">Task</label>
+                        <input type="text" id="task" class="form-control bg-dark text-white" >
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <button id="push" type="submit" class="btn btn-primary" style="max-height: 50px;">ADD</button>
+                        <button id="update1" class="btn btn-primary btn-update" style="max-height: 50px;">Update</button>
+                       
                     </div>
                 </form>
             </div>
